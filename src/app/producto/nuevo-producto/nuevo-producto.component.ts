@@ -13,6 +13,8 @@ export class NuevoProductoComponent implements OnInit {
 
   nombre: string = '';
   precio: number = 0;
+  descripcion: string ='';
+
   constructor(
     private productoService: ProductoService,
     private toastr: ToastrService,
@@ -22,7 +24,7 @@ export class NuevoProductoComponent implements OnInit {
   }
   
   onCreate(): void{
-    const producto = new Producto(this.nombre, this.precio);
+    const producto = new Producto(this.nombre, this.precio, this.descripcion);
     this.productoService.crear(producto).subscribe(
       data => {
         this.toastr.success('Producto creado', 'Éxito', {
@@ -43,5 +45,8 @@ export class NuevoProductoComponent implements OnInit {
     )
 
   }
+    volver(): void{
+      this.router.navigate(['/']);
+    }
 
 }
