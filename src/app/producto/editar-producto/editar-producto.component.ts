@@ -58,5 +58,8 @@ export class EditarProductoComponent implements OnInit {
       }
     );
   }
-
+  volver(): void{
+    this.router.navigate(['/']);
+  }
+  
 }
