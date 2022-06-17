@@ -24,7 +24,7 @@ export class NuevoProductoComponent implements OnInit {
   }
   
   onCreate(): void{
-    const producto = new Producto(this.nombre, this.precio, this.descripcion);
+    const producto = new Producto({ nombre: this.nombre, precio: this.precio, descripcion: this.descripcion});
     this.productoService.crear(producto).subscribe(
       data => {
         this.toastr.success('Producto creado', 'Éxito', {

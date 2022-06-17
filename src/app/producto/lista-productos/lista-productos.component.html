@@ -13,7 +13,7 @@
       <tr *ngFor="let producto of productos">
         <td>{{producto.id}}</td>
         <td>{{producto.nombre}}</td>
-        <td>{{producto.precio}}$</td>
+        <td>{{producto.precio}} $</td>
         <td><button class="btn btn-outline-secondary" routerLink="/detalle/{{producto.id}}"><i class="fa-solid fa-eye"></i> Ver</button></td>
         <td><button class="btn btn-outline-warning" routerLink="/editar/{{producto.id}}"><i class="fa-solid fa-pen-to-square"></i> Editar</button></td>
         <td><button class="btn btn-outline-danger" (click)="borrarProducto(producto.id)"><i class="fa-solid fa-trash"></i> Borrar</button></td>
